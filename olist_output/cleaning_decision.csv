@@ -1,7 +1,0 @@
-table,issue,decision,reason
-orders,missing delivery date,dipertahankan,menunjukkan order belum delivered/canceled
-reviews,missing review comment,dipertahankan,komentar review bersifat opsional
-products,missing category,isi unknown,kategori tetap dibutuhkan untuk analisis
-products,missing ukuran produk,imputasi median,missing numerik kecil
-payments,multi payment per order,agregasi per order,mencegah row explosion
-items,multi item per order,agregasi per order,membentuk data mart level order
