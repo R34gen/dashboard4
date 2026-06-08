@@ -1,0 +1,6 @@
+finding,evidence,interpretation,recommendation
+Kategori utama GMV,health_beauty,Pendapatan terkonsentrasi pada kategori tertentu,Prioritaskan stok dan promosi kategori utama
+Wilayah utama customer,SP,Permintaan tidak tersebar merata antar wilayah,Fokuskan campaign dan evaluasi logistik wilayah utama
+Segmen pelanggan prioritas,Big Spenders,"Prioritas ditentukan dari nilai transaksi, frekuensi, recency, dan revenue share",beri personalized high-value offer
+Keterlambatan dan review,Late: 2.27; On-time: 4.29,Order terlambat memiliki review lebih rendah,Pantau order berisiko dan perbaiki SLA pengiriman
+Model risiko terbaik,Random Forest,Model dipilih dari perbandingan beberapa metode berdasarkan average precision dan ROC AUC,Gunakan risk level untuk prioritas monitoring order

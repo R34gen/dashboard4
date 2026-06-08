@@ -1,0 +1,4 @@
+risk_level,orders,actual_late_rate,avg_risk_score
+Low Risk,374,0.0,0.3088877283405341
+Medium Risk,96094,0.06797510770703687,0.4798798337496029
+High Risk,1,1.0,0.6609102615591909
