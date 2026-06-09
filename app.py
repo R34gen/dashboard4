@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 
 st.set_page_config(
-    page_title="Olist Customer Intelligence",
+    page_title="Customer Intelligence",
     page_icon="◈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -355,7 +355,7 @@ def ranking_cards(df, name_col, value_col, caption_col=None, money=False, pct=Fa
 # Sidebar and header
 # -----------------------------------------------------------------------------
 st.sidebar.markdown("## ◈ Customer Intelligence")
-st.sidebar.caption("Olist Customer Intelligence")
+st.sidebar.caption("Customer Intelligence")
 page = st.sidebar.radio(
     "REPORT",
     ["Executive Overview", "Customer Segmentation", "Delivery Risk", "Business Insight"],
@@ -369,7 +369,7 @@ st.sidebar.write("Decision Insight")
 
 st.markdown("""
 <div class="hero">
-    <h1>Olist Customer Intelligence & Delivery Experience Dashboard</h1>
+    <h1>Customer Intelligence & Delivery Experience Dashboard</h1>
     <p>Business Intelligence • RFM Segmentation • Service Risk • Customer Review Insight</p>
 </div>
 """, unsafe_allow_html=True)
@@ -477,7 +477,7 @@ elif page == "Customer Segmentation":
             st.plotly_chart(style_fig(fig, 405, legend=False), use_container_width=True, config=PLOT_CONFIG)
         panel_close()
 
-    panel_open("Action Priority", "Kartu aksi segmen. Tidak memakai tabel mentah.")
+    panel_open("Action Priority")
     if not segment.empty and {"segment", "priority_score"}.issubset(segment.columns):
         cols = st.columns(2)
         show = segment.sort_values("priority_score", ascending=False).head(6)
@@ -673,7 +673,7 @@ elif page == "Delivery Risk":
                 orientation="h",
                 text="orders",
                 color="reliability",
-                labels={"orders": "Orders", "risk_label": "Risk Bucket", "reliability": "Interpretation"},
+                labels={"orders": "Orders", "risk_label": "Risk Bucket", "reliability": "interpretasi"},
             )
             fig.update_traces(texttemplate="%{text:,.0f}", textposition="outside")
             st.plotly_chart(style_fig(fig, 330), use_container_width=True, config=PLOT_CONFIG)
@@ -695,26 +695,26 @@ elif page == "Delivery Risk":
                 """, unsafe_allow_html=True)
     panel_close()
 
-    panel_open("Final Delivery Risk Reading", "Kesimpulan halaman Delivery Risk yang aman untuk dosen.")
+    panel_open("Kesimpulan")
     a, b, c = st.columns(3)
     a.markdown(f"""
     <div class="insight-card">
         <div class="tag">1. Business evidence</div>
-        <div class="card-title">Review drops when orders are late</div>
+        <div class="card-title">Review cenderung turun ketika orderan telat dikirim</div>
         <div class="card-body">Perbedaan review sebesar <b>{fmt_float(review_drop)} poin</b> adalah bukti paling kuat dari risiko delivery.</div>
     </div>
     """, unsafe_allow_html=True)
     b.markdown(f"""
     <div class="insight-card">
         <div class="tag">2. Model role</div>
-        <div class="card-title">Screening, not prediction final</div>
+        <div class="card-title">Disini perbandingan model hanya untuk screening awal, bukan untuk mengambil keputusan</div>
         <div class="card-body">Model dipakai untuk memprioritaskan monitoring, bukan untuk klaim prediksi akurat.</div>
     </div>
     """, unsafe_allow_html=True)
     c.markdown(f"""
     <div class="insight-card">
         <div class="tag">3. Decision action</div>
-        <div class="card-title">Improve SLA monitoring</div>
+        <div class="card-title">Meningkatkan SLA monitoring</div>
         <div class="card-body">Prioritas tindakan: pantau order berisiko, evaluasi seller/logistik, dan tekan keterlambatan yang berdampak ke review.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -744,13 +744,13 @@ elif page == "Business Insight":
 
     for i in range(0, len(decisions), 2):
         cols = st.columns(2)
-        for j, (tag, title, interpretation, recommendation) in enumerate(decisions[i:i+2]):
+        for j, (tag, title, interpretasi, rekomendasi) in enumerate(decisions[i:i+2]):
             cols[j].markdown(f"""
             <div class="insight-card">
                 <div class="tag">{tag}</div>
                 <div class="card-title">{title}</div>
-                <div class="card-body"><b>Interpretation:</b> {interpretation}</div>
-                <div class="card-body card-rec"><b>Recommendation:</b> {recommendation}</div>
+                <div class="card-body"><b>interpretasi:</b> {interpretasi}</div>
+                <div class="card-body card-rec"><b>rekomendasi:</b> {rekomendasi}</div>
             </div>
             """, unsafe_allow_html=True)
 
