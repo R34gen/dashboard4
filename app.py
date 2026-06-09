@@ -411,7 +411,7 @@ if page == "Executive Overview":
 
     left, right = st.columns([1.25, 1])
     with left:
-        panel_open("Category Performance Portfolio", "Pengganti heatmap/treemap: posisi kategori dibaca dari GMV, review, order, dan late rate.")
+        panel_open("Category Performance Portfolio")
         needed = {"category_label", "gmv", "avg_review", "orders", "late_rate"}
         if not category.empty and needed.issubset(category.columns):
             cat_show = category.sort_values("gmv", ascending=False).head(16).copy()
