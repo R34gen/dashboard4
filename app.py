@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 
 st.set_page_config(
-    page_title="Olist Customer Intelligence",
+    page_title="Customer Intelligence",
     page_icon="◈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -354,7 +354,7 @@ def ranking_cards(df, name_col, value_col, caption_col=None, money=False, pct=Fa
 # Sidebar and header
 # -----------------------------------------------------------------------------
 st.sidebar.markdown("## ◈ CRM Dashboard")
-st.sidebar.caption("Olist Customer Intelligence")
+st.sidebar.caption("Customer Intelligence")
 page = st.sidebar.radio(
     "REPORT",
     ["Executive Overview", "Customer Segmentation", "Delivery Risk", "Business Insight"],
@@ -368,7 +368,7 @@ st.sidebar.write("Decision Insight")
 
 st.markdown("""
 <div class="hero">
-    <h1>Olist Customer Intelligence Dashboard</h1>
+    <h1>Customer Intelligence Dashboard</h1>
     <p>Business Intelligence • RFM Segmentation • Service Risk • Customer Review Insight</p>
 </div>
 """, unsafe_allow_html=True)
@@ -624,7 +624,7 @@ elif page == "Business Insight":
 
     st.markdown("""
     <div class="context-box">
-        <b>Final reading</b><br>
+        <b>Kesimpulan</b><br>
         Dashboard ini tidak menjual model sebagai “akurat sempurna”. Nilai utamanya adalah <span>customer intelligence pipeline</span>: membaca performa bisnis, mengelompokkan pelanggan, menguji risiko layanan terhadap review, lalu mengubahnya menjadi rekomendasi keputusan.
     </div>
     """, unsafe_allow_html=True)
